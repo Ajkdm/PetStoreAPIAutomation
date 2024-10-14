@@ -1,9 +1,12 @@
 package api.test;
 
+import static io.restassured.RestAssured.given;
+
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.fasterxml.jackson.databind.jsonschema.JsonSchema;
 import com.github.javafaker.Faker;
 
 import api.endpoints.UserEndPoints;
@@ -73,5 +76,15 @@ public class UserTests
 		
 		Assert.assertEquals(response.getStatusCode(), 200);
 		
+	}
+	
+	@Test
+	public void m2() 
+	{
+		given()
+		.when()
+			.get("")
+		.then();
+		//.assertThat().body(JsonSchema.MatchesJsonSchemaInClassPath("TestSchema.json"));
 	}
 }
